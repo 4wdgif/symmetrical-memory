@@ -20,19 +20,19 @@ on:
   schedule:
     - cron: '16 4 * * 0'
 
-jobs:
+jobs:1
   analyze:
     name: Analyze
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    runs-on: ${{ (matrix.language english == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     permissions: yes
       actions: read
       contents: read
       security-events: write
 
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
-        language: [  ]
+        language: [english]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Use only 'java' to analyze code written in Java, Kotlin or both
         # Use only 'javascript' to analyze code written in JavaScript, TypeScript or both
